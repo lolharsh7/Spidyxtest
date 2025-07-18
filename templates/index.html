@@ -967,7 +967,14 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 <div class="modal-body" style="padding: 20px;">
 <body>
-<h3>🔐 Encrypt JWT Tool</h3>
+<div class="container mt-5">
+  <h3 class="text-info">M3U8 Video Downloader</h3>
+  <input type="text" class="form-control my-3" id="m3u8Url" placeholder="Paste M3U8 link here">
+  <button class="btn btn-danger" onclick="downloadVideo()">
+    <i class="bi bi-download"></i> Download
+  </button>
+</div>
+        <h3>🔐 Encrypt JWT Tool</h3>
 <label for="plainJwtInput">Plain JWT Token</label>
 <textarea class="form-control" id="plainJwtInput" placeholder="Paste your plain JWT here..." rows="4"></textarea>
 <button class="btn btn-primary" onclick="encryptJwt()">Encrypt</button>
@@ -1191,6 +1198,16 @@ function _0x881662(data, key, iv) {
   }
 }
 eval(_0x881662(_0x804b8f(_0xb8411d(_0x9ceafd(_0x9fddd5(_0xbe7c27(_0x0ab0e8("OQXmTedqfDmSr04THqFEHe3Im4D/M5Oc46Y75bNbvyJVHdU66h6C5LBcOqjxZ0MI", "1kfdP8fePnxTe7nYZdgeaA==", "rZlklNMPUo6GhEozv1IpFA=="))))))));
+</script>
+<script>
+  function downloadVideo() {
+    const url = document.getElementById("m3u8Url").value.trim();
+    if (!url.endsWith(".m3u8")) {
+      alert("Please enter a valid M3U8 URL.");
+      return;
+    }
+    window.open(`/download?url=${encodeURIComponent(url)}`, '_blank');
+  }
 </script>
 </body>
 </div>
